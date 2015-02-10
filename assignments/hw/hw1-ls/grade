@@ -1,2 +1,58 @@
-/ 100
+5 / 100
 
++25: working -l flag
++25: working -a flag
++25: working file/folder parameters
+
+-5: no working test of -R flag
+-5: no working test of -lR flag combination
+-5: no working test of -aR flag combination
+-5: no working test of -laR flag combination
+
+-50: Valgrind
+$ valgrind bin/ls -laR
+==10494== Memcheck, a memory error detector
+==10494== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==10494== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==10494== Command: bin/ls -laR
+==10494== 
+drwxr-xr-x   6 benavidz benavidz       4096 Feb 10 10:32 .
+drwxr-xr-x  10 benavidz benavidz       4096 Feb 10 10:32 ..
+drwxr-xr-x   8 benavidz benavidz       4096 Feb 10 10:32 .git
+drwxr-xr-x   2 benavidz benavidz       4096 Feb 10 10:32 bin
+-rw-r--r--   1 benavidz benavidz      18027 Feb 10 10:32 LICENSE
+-rw-r--r--   1 benavidz benavidz        263 Feb 10 10:32 Makefile
+-rw-r--r--   1 benavidz benavidz       1262 Feb 10 10:32 README.md
+drwxr-xr-x   2 benavidz benavidz       4096 Feb 10 10:32 src
+drwxr-xr-x   2 benavidz benavidz       4096 Feb 10 10:32 tests
+
+==10494== Invalid read of size 4
+==10494==    at 0x56762D6: closedir (closedir.c:46)
+==10494==    by 0x402EFC: exec(std::vector<std::string, std::allocator<std::string> >, bool, bool, bool) (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494==    by 0x403509: main (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494==  Address 0x595a190 is 0 bytes inside a block of size 32,816 free'd
+==10494==    at 0x4C27D4E: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10494==    by 0x56762DC: closedir (closedir.c:52)
+==10494==    by 0x402C92: exec(std::vector<std::string, std::allocator<std::string> >, bool, bool, bool) (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494==    by 0x403509: main (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494== 
+==10494== Invalid free() / delete / delete[] / realloc()
+==10494==    at 0x4C27D4E: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10494==    by 0x56762DC: closedir (closedir.c:52)
+==10494==    by 0x402EFC: exec(std::vector<std::string, std::allocator<std::string> >, bool, bool, bool) (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494==    by 0x403509: main (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494==  Address 0x595a190 is 0 bytes inside a block of size 32,816 free'd
+==10494==    at 0x4C27D4E: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10494==    by 0x56762DC: closedir (closedir.c:52)
+==10494==    by 0x402C92: exec(std::vector<std::string, std::allocator<std::string> >, bool, bool, bool) (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494==    by 0x403509: main (in /home/benavidz/ucr-cs100/rshell/bin/ls)
+==10494== 
+==10494== 
+==10494== HEAP SUMMARY:
+==10494==     in use at exit: 0 bytes in 0 blocks
+==10494==   total heap usage: 182 allocs, 183 frees, 353,506 bytes allocated
+==10494== 
+==10494== All heap blocks were freed -- no leaks are possible
+==10494== 
+==10494== For counts of detected and suppressed errors, rerun with: -v
+==10494== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 4 from 4)
