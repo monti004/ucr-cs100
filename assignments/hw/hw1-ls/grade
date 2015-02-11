@@ -1,6 +1,6 @@
-5 / 100
+ 5    / 100  
 
-+25: working -l flag
+    +25: working -l flag
 +25: working -a flag
 +25: working file/folder parameters
 
@@ -56,3 +56,4 @@ drwxr-xr-x   2 benavidz benavidz       4096 Feb 10 10:32 tests
 ==10494== 
 ==10494== For counts of detected and suppressed errors, rerun with: -v
 ==10494== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 4 from 4)
+
