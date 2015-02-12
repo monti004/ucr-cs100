@@ -9,7 +9,7 @@
 -5: no working test of -aR flag combination
 -5: no working test of -laR flag combination
 
--50: Valgrind
+-25: Valgrind
 $ valgrind bin/ls -laR
 ==10494== Memcheck, a memory error detector
 ==10494== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
