@@ -1,4 +1,4 @@
-30    / 100  
+50 / 100  
 
 +25: working -l flag
 +25: working -a flag
@@ -8,6 +8,9 @@
 -5: no working test of -lR flag combination
 -5: no working test of -aR flag combination
 -5: no working test of -laR flag combination
+
++20:
+    grade adjustment in office hours
 
 -25: Valgrind
 $ valgrind bin/ls -laR
