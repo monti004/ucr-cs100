@@ -1,28 +1,27 @@
-0 / 100
+48 / 100
 
-PATH variable: 00/40
+PATH variable: 10/40
     [00/10] Execute a program in the working directory.
-    [00/10] Execute a program not in the working directory.
+    [10/10] Execute a program not in the working directory.
     [00/10] Execute a program using an absolute path.
     [00/10] Attempt to execute a program that does not exist.
            This should throw an error.
 
-^C signal: 00/30
-    [00/30] ^C when running a child process does not stop the entire shell.
+^C signal: 15/30
+    [15/30] ^C when running a child process does not stop the entire shell.
+        The shell does not exit when ^C is pressed, but there are no tests showing the effect of ^C on a programming running in the shell.
 
-cd and prompt: 00/30
+cd and prompt: 23/30
     (The prompt must change correctly for all of the cases below for full
      credit.)
-    [0/8] Change to a directory underneath the current working directory.
-    [0/8] Change to a directory above the current working directory.
+    [8/8] Change to a directory underneath the current working directory.
+    [8/8] Change to a directory above the current working directory.
     [0/7] Change to a directory specified using an absolute path.
-    [0/7] Change to a directory which does not exist.
+    [7/7] Change to a directory which does not exist.
 
 extra credit: 00/20
     [0/7] ^Z
     [0/6] fg
     [0/6] bg
 
-No signals.script file present.
-
-Total: 0/100
+Total: 48/100
